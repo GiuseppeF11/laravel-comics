@@ -1,3 +1,29 @@
+@php
+    $shopOptions = [
+        [
+            'icon'=> 'buy-comics-digital-comics.png',
+            'text'=> 'DIGITAL COMICS'
+        ],
+        [
+            'icon'=> 'buy-comics-merchandise.png',
+            'text'=> 'DC MERCHANDISE'
+        ],
+        [
+            'icon'=> 'buy-comics-subscriptions.png',
+            'text'=> 'SUBSCRIPTION'
+        ],
+        [
+            'icon'=> 'buy-comics-shop-locator.png',
+            'text'=> 'COMIC SHOP LOCATOR'
+        ],
+        [
+            'icon'=> 'buy-dc-power-visa.svg',
+            'text'=> 'DC POWER VISA'
+        ],
+    ];
+
+@endphp
+
 <main>
     <div class="content-box jumbo-box">
         <div class="jumbo-box">
@@ -26,14 +52,16 @@
 
     <div class="shop-options">
         <div>
-            <div class="shop-box" v-for="elem in shopOptions">
-                <div class="img-box">
-                    <img src="" alt="">
+            @foreach ($shopOptions as $shop)
+                <div class="shop-box">
+                    <div class="img-box">
+                        <img src="{{Vite::asset('resources/img/'.$shop['icon'])}}" alt=""> {{--  UNA TORTURA --}}
+                    </div>
+                    <div>
+                        @php echo $shop['text'] @endphp
+                    </div>
                 </div>
-                <div>
-                    
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </main>
@@ -50,7 +78,7 @@ min-height: 500px;
     .jumbo-box {
         height: 45vh;
         background-size: cover;
-        background-image: url('https://www.today.it/~shared/images/tv/locandine/teen-titans-go-2led.jpg');
+        background-image: url('{{Vite::asset('resources/img/jumbotron.jpg')}}');
 
         div {
             position: absolute; bottom: 37vh; left: 10vw;
