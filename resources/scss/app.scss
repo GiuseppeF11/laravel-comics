@@ -1,15 +1,18 @@
 @import "~bootstrap/scss/bootstrap";
 
-main {
-    background-color: rgb(128, 208, 240);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    list-style: none;
 }
 
-.gatto-img {
-    height: 200px;
+* img {
+    width: 100%;
 }
 
-.gatto-bg {
-    height: 200px;
-    background-image: url('../img/gatto.webp');
-    background-size: contain;
+* a {
+    text-decoration: none;
 }
