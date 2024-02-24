@@ -1,5 +1,5 @@
 @php
-$footer_links = [
+$footer_icons = [
     [
         'url' => 'footer-facebook.png'
     ],
@@ -16,6 +16,92 @@ $footer_links = [
         'url' => 'footer-youtube.png'
     ],
 ];
+
+$footer_links = [
+    [
+        'Dc Comics' => [
+            [
+                'name' => 'Characters'
+            ],
+            [
+                'name' => 'Comics'
+            ],
+            [
+                'name' => 'Movies'
+            ],
+            [
+                'name' => 'Tv'
+            ],
+            [
+                'name' => 'Games'
+            ],
+            [
+                'name' => 'News'
+            ],
+        ],
+        'Shop' => [
+            [
+                'name' => 'Shop DC'
+            ],
+            [
+                'name' => 'Shop DC Collectibles'
+            ],
+        ],
+        'Dc' => [
+            [
+                'name' => 'Term Of Use'
+            ],
+            [
+                'name' => 'Privacy policy (New)'
+            ],
+            [
+                'name' => 'Ad Choices'
+            ],
+            [
+                'name' => 'Advertising'
+            ],
+            [
+                'name' => 'Jobs'
+            ],
+            [
+                'name' => 'Subscriptions'
+            ],
+            [
+                'name' => 'Talent Workshops'
+            ],
+            [
+                'name' => 'CPSC Certificates'
+            ],
+            [
+                'name' => 'Ratings'
+            ],
+            [
+                'name' => 'Shop Help'
+            ],
+            [
+                'name' => 'Contact Us'
+            ],
+
+        ],
+        'Sites' => [
+            [
+                'name' => 'DC'
+            ],
+            [
+                'name' => 'MAD Magazine'
+            ],
+            [
+                'name' => 'DC Kids'
+            ],
+            [
+                'name' => 'DC Universe'
+            ],
+            [
+                'name' => 'DC Power Visa'
+            ],
+        ]
+    ]
+];
 @endphp
 
 <footer>
@@ -24,44 +110,41 @@ $footer_links = [
             <div class="info-container">
                 <div class="col">
                     <div class="title">
-                        <h3>DC COMICS</h3>
-                        <a href="">Characters</a>
-                        <a href="">Comics</a>
-                        <a href="">Movies</a>
-                        <a href="">Tv</a>
-                        <a href="">Games</a>
-                        <a href="">News</a>
+                        <h3>{{ array_keys($footer_links[0])[0]}}</h3>
+                        @foreach ($footer_links[0]['Dc Comics'] as $link)
+                        <a href="">
+                            @php echo $link['name'] @endphp
+                        </a>
+                        @endforeach
+                        
                     </div>
                     <div class="title">
-                        <h3>SHOP</h3>
-                        <a href="">Shop DC</a>
-                        <a href="">Shop DC Collectibles</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="title">
-                        <h3>DC</h3>
-                        <a href="">Term Of Use</a>
-                        <a href="">Privacy policy</a>
-                        <a href="">Ad Choices</a>
-                        <a href="">Advertising</a>
-                        <a href="">Jobs</a>
-                        <a href="">Subscriptions</a>
-                        <a href="">Talent Workshops</a>
-                        <a href="">CPSC Certificates</a>
-                        <a href="">Ratings</a>
-                        <a href="">Shop Help</a>
-                        <a href="">Contact Us</a>
+                        <h3>{{ array_keys($footer_links[0])[1] }}</h3>
+                        @foreach ($footer_links[0]['Shop'] as $link)
+                        <a href="">
+                            @php echo $link['name'] @endphp
+                        </a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="col">
                     <div class="title">
-                        <h3>SITES</h3>
-                        <a href="">DC</a>
-                        <a href="">MAD Magazine</a>
-                        <a href="">DC Kids</a>
-                        <a href="">DC Universe</a>
-                        <a href="">DC Power Visa</a>
+                        <h3>{{ array_keys($footer_links[0])[2] }}</h3>
+                        @foreach ($footer_links[0]['Dc'] as $link)
+                        <a href="">
+                            @php echo $link['name'] @endphp
+                        </a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="title">
+                        <h3>{{ array_keys($footer_links[0])[3] }}</h3>
+                        @foreach ($footer_links[0]['Sites'] as $link)
+                        <a href="">
+                            @php echo $link['name'] @endphp
+                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -79,7 +162,7 @@ $footer_links = [
                 FOLLOW US
             </span>
 
-            @foreach ($footer_links as $link)
+            @foreach ($footer_icons as $link)
             <div class="logo-box">
                 <img src="{{Vite::asset('resources/img/'.$link['url'])}}" alt="">
             </div>
