@@ -21,9 +21,73 @@ Route::get('/', function () {
     
 });
 
+
+Route::get('/characters', function () {
+    $comics = config('comics');
+    return view('subpages.characters', [
+        'comics'=>$comics,
+    ]);
+});
+
 Route::get('/comics', function () {
     $comics = config('comics');
-    return view('subpages.about', [
+    return view('subpages.comics', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/movies', function () {
+    $comics = config('comics');
+    return view('subpages.movies', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/tv', function () {
+    $comics = config('comics');
+    return view('subpages.tv', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/games', function () {
+    $comics = config('comics');
+    return view('subpages.games', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/collectibles', function () {
+    $comics = config('comics');
+    return view('subpages.collectibles', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/videos', function () {
+    $comics = config('comics');
+    return view('subpages.videos', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/fans', function () {
+    $comics = config('comics');
+    return view('subpages.fans', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/news', function () {
+    $comics = config('comics');
+    return view('subpages.news', [
+        'comics'=>$comics,
+    ]);
+});
+
+Route::get('/shop', function () {
+    $comics = config('comics');
+    return view('subpages.shop', [
         'comics'=>$comics,
     ]);
 });

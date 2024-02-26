@@ -2,7 +2,7 @@
     $links = [
         [
             "label"=> 'CHARACTERS',
-            "url"=> '/' ,  
+            "url"=> '/characters' ,  
         ],
         [
             "label"=> 'COMICS',
@@ -10,35 +10,35 @@
         ],
         [
             "label"=> 'MOVIES',
-            "url"=> '/' ,  
+            "url"=> '/movies' ,  
         ],
         [
             "label"=> 'TV',
-            "url"=> '/' ,  
+            "url"=> '/tv' ,  
         ],
         [
             "label"=> 'GAMES',
-            "url"=> '/' ,  
+            "url"=> '/games' ,  
         ],
         [
             "label"=> 'COLLECTIBLES',
-            "url"=> '/' ,  
+            "url"=> '/collectibles' ,  
         ],
         [
             "label"=> 'VIDEOS',
-            "url"=> '/' ,  
+            "url"=> '/videos' ,  
         ],
         [
             "label"=> 'FANS',
-            "url"=> '/' ,  
+            "url"=> '/fans' ,  
         ],
         [
             "label"=> 'NEWS',
-            "url"=> '/' ,  
+            "url"=> '/news' ,  
         ],
         [
             "label"=> 'SHOP',
-            "url"=> '/' ,  
+            "url"=> '/shop' ,  
         ],
     ];
 @endphp
@@ -51,9 +51,9 @@
         </div>
     </div>
     <div class="container-header">
-        <div class="logo-box">
+        <a class="logo-box" href="/">
             <img src="{{Vite::asset('resources/img/dc-logo.png')}}" alt="">
-        </div>
+        </a>
         
         <nav class="navbar">
             @foreach ($links as $link)
@@ -93,6 +93,10 @@
     .logo-box {
         height: 50px;
         width: 50px;
+        &:hover {
+            filter: grayscale(100%);
+            transition:0.3s;
+        }
     }
     .navbar {
         display: flex;
