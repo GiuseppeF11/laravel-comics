@@ -38,7 +38,7 @@
                         <img src="@php echo $comic['thumb'] @endphp" alt="name">
                     </div>
                     <h5>
-                        @php echo $comic['title'] @endphp
+                        {{$comic['title']}}
                     </h5>
                 </div>
             @endforeach
@@ -58,7 +58,7 @@
                         <img src="{{Vite::asset('resources/img/'.$shop['icon'])}}" alt=""> {{--  UNA TORTURA --}}
                     </div>
                     <div>
-                        @php echo $shop['text'] @endphp
+                        {{$shop['text']}}
                     </div>
                 </div>
             @endforeach
@@ -101,9 +101,13 @@ min-height: 500px;
         padding: 3px;
         cursor: pointer;
         margin-bottom: 20px;
+        filter: grayscale(100%);
+        border-radius: 10px;
 
         &:hover {
-            background-color: #555555;
+            background-color: #818181;
+            filter: grayscale(0%);
+            transition: 0.8s;
         }
         .img-box {
             width: 150px;
@@ -167,7 +171,8 @@ min-height: 500px;
 
             &:hover {
                 cursor: pointer;
-                border: 3px solid white;
+                border-bottom: 4px solid white;
+                transition: 0.1s;
             }
 
             .img-box {

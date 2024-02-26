@@ -6,7 +6,7 @@
         ],
         [
             "label"=> 'COMICS',
-            "url"=> '/' ,  
+            "url"=> '/comics' ,  
         ],
         [
             "label"=> 'MOVIES',
@@ -22,10 +22,6 @@
         ],
         [
             "label"=> 'COLLECTIBLES',
-            "url"=> '/' ,  
-        ],
-        [
-            "label"=> 'VIDEOS',
             "url"=> '/' ,  
         ],
         [
@@ -62,8 +58,8 @@
         <nav class="navbar">
             @foreach ($links as $link)
             <div class="navbar-link" >
-                <a href="">
-                    @php echo $link['label'] @endphp
+                <a href="{{$link['url']}}">
+                    {{$link['label']}}
                 </a>
             </div>
             @endforeach
@@ -105,6 +101,7 @@
         min-width: 70%;
         font-size: small;
         height: 100%;
+        padding: 0;
 
         .navbar-link {
             display: flex;
@@ -115,6 +112,7 @@
 
             &:hover {
                 border-bottom: 5px solid #0282F9;
+                transition: 0.3s;
                 a {
                     color: #0282F9;
                 }

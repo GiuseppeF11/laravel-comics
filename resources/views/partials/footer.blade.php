@@ -113,7 +113,7 @@ $footer_links = [
                         <h3>{{ array_keys($footer_links[0])[0]}}</h3>
                         @foreach ($footer_links[0]['Dc Comics'] as $link)
                         <a href="">
-                            @php echo $link['name'] @endphp
+                            {{$link['name']}}
                         </a>
                         @endforeach
                         
@@ -122,7 +122,7 @@ $footer_links = [
                         <h3>{{ array_keys($footer_links[0])[1] }}</h3>
                         @foreach ($footer_links[0]['Shop'] as $link)
                         <a href="">
-                            @php echo $link['name'] @endphp
+                            {{$link['name']}}
                         </a>
                         @endforeach
                     </div>
@@ -132,7 +132,7 @@ $footer_links = [
                         <h3>{{ array_keys($footer_links[0])[2] }}</h3>
                         @foreach ($footer_links[0]['Dc'] as $link)
                         <a href="">
-                            @php echo $link['name'] @endphp
+                            {{$link['name']}}
                         </a>
                         @endforeach
                     </div>
@@ -142,7 +142,7 @@ $footer_links = [
                         <h3>{{ array_keys($footer_links[0])[3] }}</h3>
                         @foreach ($footer_links[0]['Sites'] as $link)
                         <a href="">
-                            @php echo $link['name'] @endphp
+                            {{$link['name']}}
                         </a>
                         @endforeach
                     </div>
@@ -175,12 +175,12 @@ $footer_links = [
 <style lang="scss" scoped>
 
     footer {
-        height: 61vh;
+        min-height: 60vh;
         background-color: #303030;
     }
     .footer-top{
         height: 75%;
-        background-image: url(../../public/img/footer-bg.jpg);
+        background-image: url({{Vite::asset('resources/img/footer-bg.jpg')}});
         display: flex;
         justify-content: space-around;
         color: white;
@@ -258,8 +258,9 @@ $footer_links = [
                 border: 3px solid #0282F9;
                 cursor: pointer;
     
-                &:active {
+                &:hover {
                     background-color: #555555;
+                    transition: 0.5s;
                 }
             }
         }
